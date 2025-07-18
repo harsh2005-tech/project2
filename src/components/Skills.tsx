@@ -42,10 +42,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-navy-900 mb-12">
+          <h2 className="text-4xl font-bold text-center text-navy-900 dark:text-white mb-12">
             Skills & Expertise
           </h2>
           
@@ -53,14 +53,14 @@ const Skills = () => {
             {skillCategories.map((category, index) => (
               <div
                 key={category.title}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-800"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center mb-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                  <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white dark:text-white`}>
                     <category.icon size={24} />
                   </div>
-                  <h3 className="text-xl font-semibold text-navy-900 ml-3">
+                  <h3 className="text-xl font-semibold text-navy-900 dark:text-white ml-3">
                     {category.title}
                   </h3>
                 </div>
@@ -69,7 +69,7 @@ const Skills = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skill}
-                      className="flex items-center space-x-2 text-navy-700"
+                      className="flex items-center space-x-2 text-navy-700 dark:text-gray-300"
                     >
                       <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                       <span className="text-sm">{skill}</span>

@@ -67,7 +67,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-navy-900 mb-12">
@@ -75,10 +75,16 @@ const Projects = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Placeholder for new project details */}
+            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-dashed border-blue-400 dark:border-blue-700 flex flex-col items-center justify-center p-8 min-h-[200px] col-span-full">
+              <span className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-2">New Project Coming Soon</span>
+              <p className="text-navy-700 dark:text-gray-300 text-center">Project details will be added here soon. Stay tuned!</p>
+            </div>
+            {/* Existing projects */}
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 overflow-hidden ${
+                className={`bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-800 overflow-hidden ${
                   project.featured ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -89,7 +95,7 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent dark:from-gray-900/70 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
                 <div className="p-6">
@@ -107,7 +113,7 @@ const Projects = () => {
                       return (
                         <span
                           key={tech}
-                          className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full"
+                          className="inline-flex items-center px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full"
                         >
                           <Icon size={12} className="mr-1" />
                           {tech}
@@ -121,7 +127,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
+                      className="flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-800 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors duration-200 text-sm font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none active:scale-95 transform transition-transform"
                     >
                       <ExternalLink size={16} className="mr-2" />
                       Live Demo
@@ -130,7 +136,7 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-200 text-sm font-medium"
+                      className="flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-900 dark:hover:bg-gray-900 transition-colors duration-200 text-sm font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none active:scale-95 transform transition-transform"
                     >
                       <Github size={16} className="mr-2" />
                       GitHub
