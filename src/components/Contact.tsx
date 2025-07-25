@@ -70,19 +70,6 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="tel:8002524376"
-                  className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-800"
-                >
-                  <div className="bg-green-600 dark:bg-green-800 p-3 rounded-full">
-                    <Phone size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-navy-900 dark:text-white">Phone</p>
-                    <p className="text-navy-600 dark:text-gray-300">+91 8002524376</p>
-                  </div>
-                </a>
-
-                <a
                   href="https://www.linkedin.com/in/harsh-k-319a32363"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -94,21 +81,6 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-navy-900 dark:text-white">LinkedIn</p>
                     <p className="text-navy-600 dark:text-gray-300">Connect with me</p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.instagram.com/harshkumar27_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-800"
-                >
-                  <div className="bg-pink-600 dark:bg-pink-800 p-3 rounded-full">
-                    <Instagram size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-navy-900 dark:text-white">Instagram</p>
-                    <p className="text-navy-600 dark:text-gray-300">@harshkumar27_</p>
                   </div>
                 </a>
 
