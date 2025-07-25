@@ -20,18 +20,27 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+    setSubmitStatus(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    }
+    setIsSubmitting(false);
+    // Reset status after 3 seconds
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 3000);
-    }, 1000);
+      setSubmitStatus(null);
+    }, 3000);
   };
 
   return (

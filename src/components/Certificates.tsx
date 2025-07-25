@@ -14,21 +14,21 @@ const Certificates = () => {
     {
       title: 'JavaScript Basics',
       platform: 'Coursera',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: '/certificate-javascript-basics.png', // updated to local image
       url: 'https://coursera.org/share/30a83b697c029767c537f1b6f430e9c2',
       description: 'Comprehensive course covering JavaScript fundamentals, ES6+ features, and best practices.'
     },
     {
       title: 'Copywriting with ChatGPT',
       platform: 'Coursera',
-      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: '/certificate-copywriting-chatgpt.png', // updated to local image
       url: 'https://coursera.org/share/71c9799b77f9bc6d6ee5599aacc0a418',
       description: 'Learn modern copywriting techniques and AI-assisted content creation strategies.'
     },
     {
       title: 'Google Ads for Beginners',
       platform: 'Coursera',
-      image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: '/certificate-google-ads-for-beginners.png', // updated to local image
       url: 'https://coursera.org/share/b51597e0858c8292170d8f4f2255dadc',
       description: 'Complete guide to Google Ads campaign creation, optimization, and performance analysis.'
     }

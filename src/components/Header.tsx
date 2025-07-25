@@ -27,9 +27,16 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-navy-900 dark:text-white">
-            <span className="text-blue-600">H</span>
-            <span className="text-navy-900 dark:text-white">K</span>
+          <div className="flex items-center space-x-3">
+            <img
+              src="/profile.jpg"
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover border-2 border-blue-600 shadow"
+            />
+            <div className="text-2xl font-bold text-navy-900 dark:text-white">
+              <span className="text-blue-600">H</span>
+              <span className="text-navy-900 dark:text-white">K</span>
+            </div>
           </div>
           
           <nav className="hidden md:flex space-x-8">
