@@ -17,7 +17,7 @@ const Resume = () => {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-black">
+    <section className="py-20 bg-dark-golden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-12">
@@ -39,13 +39,34 @@ const Resume = () => {
             <button
               id="download-btn"
               onClick={handleDownload}
-              className="group relative bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:outline-none active:scale-95 transition-transform"
+              className="relative bg-card-bg border border-accent-primary text-main rounded-xl py-2 px-6 font-semibold text-lg transition-all duration-300 focus:outline-none focus-neon group overflow-hidden"
+              style={{
+                backgroundColor: '#13141F',
+                color: '#F1F5F9',
+                border: '1px solid #00F7FF',
+                boxShadow: '0 0 10px #00F7FF, 0 0 20px #00F7FF66',
+                transition: 'all 0.3s ease-in-out',
+              }}
+              onMouseDown={e => { e.currentTarget.style.backgroundColor = '#0A0A17'; e.currentTarget.style.transform = 'scale(0.97)'; }}
+              onMouseUp={e => { e.currentTarget.style.backgroundColor = '#13141F'; e.currentTarget.style.transform = 'scale(1)'; }}
+              onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#13141F'; e.currentTarget.style.transform = 'scale(1)'; }}
+              onMouseOver={e => { e.currentTarget.style.backgroundColor = '#0F0F1A'; e.currentTarget.style.boxShadow = '0 0 10px #00F7FF, 0 0 20px #00F7FF66'; e.currentTarget.style.border = '1px solid #00F7FFAA'; e.currentTarget.style.textShadow = '0 0 6px #00F7FF'; e.currentTarget.style.transform = 'scale(1.03)'; }}
             >
               <div className="flex items-center">
                 <Download size={24} className="mr-3" />
                 Download Resume
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 dark:from-blue-900 dark:to-blue-950 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 pointer-events-none rounded-lg group-hover:bg-[linear-gradient(135deg,#0F2027,#00F7FF22)] group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
+              <style>{`
+                #download-btn:hover {
+                  box-shadow: 0 0 12px #00F7FF80;
+                  text-shadow: 0 0 8px #00F7FF;
+                }
+                #download-btn:active {
+                  transform: scale(0.98);
+                  background: #0F0F1A;
+                }
+              `}</style>
             </button>
             
             <p className="text-sm text-navy-600 dark:text-gray-300 mt-4">

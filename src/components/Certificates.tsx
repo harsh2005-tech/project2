@@ -46,19 +46,18 @@ const Certificates = () => {
   }, [modalImage]);
 
   return (
-    <section id="certificates" className="py-20 bg-gray-50 dark:bg-black">
+    <section id="certificates" className="py-20 bg-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-navy-900 dark:text-white mb-12">
+          <h2 className="text-4xl font-bold text-center text-accent mb-12 fade-in" style={{fontFamily: 'Space Grotesk, Inter, Poppins, sans-serif'}}>
             Certificates & Achievements
           </h2>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((cert, index) => (
               <div
                 key={cert.title}
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-800 overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="bg-main rounded-xl shadow-lg card-hover border border-gray-800 overflow-hidden fade-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="relative overflow-hidden group cursor-pointer" onClick={() => setModalImage(cert.image)}>
                   <img
@@ -67,32 +66,29 @@ const Certificates = () => {
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
-                    <div className="bg-blue-600 dark:bg-blue-800 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="bg-accent-secondary text-main px-3 py-1 rounded-full text-sm font-medium">
                       {cert.platform}
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-lg font-semibold">View Image</span>
+                    <span className="text-main text-lg font-semibold">View Image</span>
                   </div>
                 </div>
-                
                 <div className="p-6">
                   <div className="flex items-center mb-3">
-                    <Award className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" />
-                    <h3 className="text-xl font-semibold text-navy-900 dark:text-white">
+                    <Award className="w-5 h-5 text-accent-secondary mr-2" />
+                    <h3 className="text-xl font-semibold text-accent">
                       {cert.title}
                     </h3>
                   </div>
-                  
-                  <p className="text-navy-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+                  <p className="text-muted mb-4 text-sm leading-relaxed">
                     {cert.description}
                   </p>
-                  
                   <a
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-800 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors duration-200 text-sm font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none active:scale-95 transform transition-transform"
+                    className="inline-flex items-center px-4 py-2 bg-accent-secondary text-main rounded-lg glow-hover underline-animate text-sm font-medium focus:ring-2 focus:ring-accent-secondary focus:outline-none active:scale-95"
                   >
                     <ExternalLink size={16} className="mr-2" />
                     View Certificate
@@ -107,10 +103,10 @@ const Certificates = () => {
       {modalImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={closeModal}>
           <div className="relative max-w-2xl w-full mx-4" onClick={e => e.stopPropagation()}>
-            <button onClick={closeModal} className="absolute top-2 right-2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80 focus:outline-none">
+            <button onClick={closeModal} className="absolute top-2 right-2 text-main bg-black/60 rounded-full p-2 hover:bg-black/80 focus:outline-none">
               <X size={28} />
             </button>
-            <img src={modalImage} alt="Certificate" className="w-full h-auto rounded-xl shadow-2xl border-4 border-white" />
+            <img src={modalImage} alt="Certificate" className="w-full h-auto rounded-xl shadow-2xl border-4 border-main" />
           </div>
         </div>
       )}
